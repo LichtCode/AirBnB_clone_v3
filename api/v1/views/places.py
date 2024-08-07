@@ -18,8 +18,6 @@ def places_by_city(city_id):
     city_obj = storage.get("City", str(city_id))
     for obj in city_obj.places:
         place_list.append(obj.to_json())
-    if len(place_list) == 0:
-        abort(404)
     return jsonify(place_list)
 
 
